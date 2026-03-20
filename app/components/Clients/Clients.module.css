@@ -1,0 +1,112 @@
+.clients {
+  padding: 100px 0;
+  background: var(--light-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.clientsContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.clientsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.clientsHeaderLeft {}
+
+.clientsHeaderRight {
+  text-align: right;
+}
+
+.bigNumber {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--primary-blue);
+  font-style: italic;
+  line-height: 1;
+}
+
+.bigNumberLabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-top: 4px;
+}
+
+/* Logo Grid */
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.logoCard {
+  background: white;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.logoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.clientName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dark-text);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Row with 3 */
+.logoGridSmall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .logoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logoGridSmall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .logoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .logoGridSmall {
+    grid-template-columns: 1fr;
+  }
+
+  .clients {
+    padding: 60px 0;
+  }
+}

@@ -1,0 +1,162 @@
+.serviceDetail {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceDetail:nth-child(even) {
+  background: var(--light-gray);
+}
+
+.detailContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.detailContainer.reverse {
+  direction: rtl;
+}
+
+.detailContainer.reverse > * {
+  direction: ltr;
+}
+
+/* Image side */
+.detailImageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.detailImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Content side */
+.detailContent {
+  position: relative;
+}
+
+.detailLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+}
+
+.detailLabel::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.detailTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark-text);
+  margin-bottom: 16px;
+}
+
+.detailTitle .blue {
+  color: var(--primary-blue);
+}
+
+.detailTitle .orange {
+  color: var(--accent-orange);
+}
+
+.detailDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--body-text);
+  margin-bottom: 32px;
+}
+
+/* Feature list with check icons */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.featureItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.featureCheck {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featureContent h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 4px;
+}
+
+.featureContent p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--body-text);
+}
+
+/* Alt background */
+.altBg {
+  background: var(--light-gray);
+}
+
+@media (max-width: 900px) {
+  .detailContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .detailContainer.reverse {
+    direction: ltr;
+  }
+
+  .detailImageWrapper {
+    order: 0;
+  }
+
+  .detailContent {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceDetail {
+    padding: 60px 0;
+  }
+}
