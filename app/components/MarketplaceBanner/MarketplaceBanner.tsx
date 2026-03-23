@@ -16,12 +16,12 @@ export default function MarketplaceBanner() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
-        { y: 120, opacity: 0, scale: 0.85 },
+        { y: 100, opacity: 0, scale: 0.9 },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 1.3,
+          duration: 1.2,
           ease: "power4.out",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -37,7 +37,7 @@ export default function MarketplaceBanner() {
         {
           scaleX: 1,
           duration: 0.8,
-          delay: 0.6,
+          delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -52,7 +52,8 @@ export default function MarketplaceBanner() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.marketplaceBanner}>
+    <section ref={sectionRef} className={styles.banner}>
+      <div className={styles.bgDots}></div>
       <div className={styles.bannerContent}>
         <div className={styles.bannerLabel}>Digital Shelf Strategy</div>
         <h2 ref={titleRef} className={styles.bannerTitle}>

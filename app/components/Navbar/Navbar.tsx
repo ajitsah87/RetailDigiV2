@@ -52,8 +52,7 @@ export default function Navbar() {
         <div className={styles.navContainer}>
           <div className={styles.navInner}>
             <a href="#home" className={styles.logo}>
-              <div className={styles.logoIcon}>R</div>
-              <span className={styles.logoText}>RetailDigi</span>
+              <img src="/logo.png" alt="RetailDigi" className={styles.logoImage} />
             </a>
 
             <ul className={styles.navLinks}>
@@ -74,8 +73,11 @@ export default function Navbar() {
             </ul>
 
             <a href="#contact" className={styles.ctaBtn}>
-              Partner With Us
-              <span className={styles.ctaArrow}>→</span>
+              <span className={styles.btnText}>Partner With Us</span>
+              <div className={styles.ctaArrow}>
+                <span className={styles.arrowCurrent}>→</span>
+                <span className={styles.arrowNext}>→</span>
+              </div>
             </a>
 
             <button
@@ -114,7 +116,11 @@ export default function Navbar() {
             handleNavClick("#contact");
           }}
         >
-          Partner With Us →
+          <span className={styles.btnText}>Partner With Us</span>
+          <div className={styles.ctaArrow}>
+            <span className={styles.arrowCurrent}>→</span>
+            <span className={styles.arrowNext}>→</span>
+          </div>
         </a>
       </div>
     </>

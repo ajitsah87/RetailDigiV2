@@ -53,6 +53,7 @@ export default function D2CBanner() {
 
   return (
     <section ref={sectionRef} className={styles.banner}>
+      <div className={styles.bgDots}></div>
       <div className={styles.bannerContent}>
         <div className={styles.bannerLabel}>RetailDigi • Direct Growth Engine</div>
         <h2 ref={titleRef} className={styles.bannerTitle}>

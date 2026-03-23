@@ -54,26 +54,10 @@
   flex-shrink: 0;
 }
 
-.logoIcon {
-  width: 38px;
+.logoImage {
   height: 38px;
-  background: var(--primary-blue);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 800;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.logoText {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--dark-text);
-  letter-spacing: -0.5px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navLinks {
@@ -103,8 +87,8 @@
 .ctaBtn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
+  gap: 12px;
+  padding: 8px 8px 8px 24px;
   background: var(--primary-blue);
   color: white;
   font-weight: 600;
@@ -112,7 +96,7 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -124,15 +108,55 @@
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
 }
 
+.btnText {
+  position: relative;
+  z-index: 2;
+}
+
 .ctaArrow {
-  width: 24px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.25);
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+}
+
+.arrowCurrent, .arrowNext {
+  position: absolute;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowCurrent {
+  transform: translate(0, 0);
+}
+
+.arrowNext {
+  transform: translate(-150%, 150%);
+}
+
+.ctaBtn:hover .ctaArrow {
+  background: #ffffff;
+  color: var(--primary-blue);
+  transform: scale(1.15);
+}
+
+.ctaBtn:hover .arrowCurrent {
+  transform: translate(150%, -150%);
+}
+
+.ctaBtn:hover .arrowNext {
+  transform: translate(0, 0);
 }
 
 /* Mobile */
@@ -188,7 +212,7 @@
   display: flex;
 }
 
-.mobileMenu a {
+.mobileMenu a:not(.ctaBtn) {
   font-size: 24px;
   font-weight: 600;
   color: var(--dark-text);
@@ -197,7 +221,7 @@
   transition: color 0.3s ease;
 }
 
-.mobileMenu a:hover {
+.mobileMenu a:not(.ctaBtn):hover {
   color: var(--primary-blue);
 }
 

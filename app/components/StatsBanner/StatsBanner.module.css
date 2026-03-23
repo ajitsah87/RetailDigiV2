@@ -1,0 +1,114 @@
+.statsBanner {
+  background-color: #0b1120;
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bgDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12%; /* Ensures equal spacing between blocks */
+  position: relative;
+  z-index: 1;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 25%;
+}
+
+.valueContainer {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1; /* exact fit */
+  display: flex;
+  align-items: flex-end; /* match bottoms */
+  font-family: 'Inter', sans-serif; /* Fallback */
+}
+
+/* Odometer CSS */
+.slotMachine {
+  display: inline-flex;
+  height: 1em; /* match text line-height */
+  overflow: hidden;
+}
+
+.slotStrip {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.slotDigit {
+  height: 1em;
+  line-height: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.blueText {
+  color: #2563eb;
+}
+
+.whiteText {
+  color: #ffffff;
+}
+
+.textContainer {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #f8fafc;
+}
+
+.textLine2 {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  
+  .statItem {
+    width: 100%;
+  }
+
+  .valueContainer {
+    font-size: 3.5rem;
+  }
+
+  .textContainer {
+    font-size: 1rem;
+  }
+}
