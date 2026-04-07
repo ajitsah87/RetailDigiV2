@@ -62,17 +62,18 @@
   max-width: 720px;
 }
 
-/* Two Cards Grid */
+/* Three Cards Grid */
 .cardsGrid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 24px;
+  grid-template-columns: 0.9fr 1.35fr 0.9fr; /* Matches exact design ratio */
+  gap: 20px;
+  align-items: stretch;
 }
 
 .card {
   background: white;
   border-radius: 16px;
-  padding: 40px;
+  padding: 32px; /* Reduced padding slightly to save vertical space */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
@@ -97,21 +98,20 @@
   color: #64748b;
 }
 
-/* Capabilities list - pill shape matching screenshot */
 .capList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px; /* Reduced gap */
 }
 
 .capItem {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 16px 24px;
+  gap: 16px; /* Reduced gap */
+  padding: 12px 16px; /* Reduced padding */
   background: #f8fafc;
-  border-radius: 16px;
-  font-size: 22px;
+  border-radius: 12px; /* Smaller border radius */
+  font-size: 18px; /* Reduced font size */
   font-weight: 700;
   color: #334155;
   transition: all 0.3s ease;
@@ -123,10 +123,10 @@
 }
 
 .capIconContainer {
-  width: 56px;
-  height: 56px;
+  width: 48px; /* Reduced icon container size */
+  height: 48px;
   background: #e0e7ff;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,8 +135,8 @@
 }
 
 .capIcon {
-  width: 28px;
-  height: 28px;
+  width: 24px; /* Reduced icon size */
+  height: 24px;
   fill: currentColor;
 }
 
@@ -144,7 +144,7 @@
 .platformGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 24px;
+  gap: 16px 20px; /* Reduced gap */
   align-items: center;
   margin-bottom: 24px;
 }
@@ -152,7 +152,7 @@
 .platformLogo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 22px; /* Reduced font size */
   display: flex;
   align-items: center;
   gap: 6px;
@@ -193,6 +193,46 @@
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
   z-index: 2;
   white-space: nowrap;
+}
+
+/* Stats Banner Column Layout in About */
+.statsCardWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0; 
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  overflow: visible; 
+  height: 100%;
+}
+
+/* Image on top of stats */
+.adImageWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -32px;
+  transform: translateY(-8px);
+}
+
+.adImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Blue curved container */
+.statsBlueContainer {
+  background-color: var(--deep-navy, #0f172a);
+  border-radius: 14px;
+  padding: 40px 24px 24px; 
+  position: relative;
+  z-index: 1;
+  overflow: hidden; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {

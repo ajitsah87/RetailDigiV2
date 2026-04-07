@@ -49,17 +49,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 20px;
 }
 
 .logoCard {
   background: white;
   border-radius: 12px;
-  padding: 28px 24px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80px;
+  min-height: 100px;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
@@ -69,13 +69,15 @@
   box-shadow: var(--shadow-md);
 }
 
-.clientName {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--dark-text);
-  text-align: center;
-  letter-spacing: 1px;
+/* Logo image wrapper — fixed area, logo scales to fill */
+.logoImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+.logoImg {
+  object-fit: contain;
 }
 
 /* Row with 3 */
@@ -109,14 +111,8 @@
   .clients {
     padding: 60px 0;
   }
-}
 
-.logoImage {
-  position: relative;
-  width: 100%;
-  height: 60px;
-}
-
-.logoImage img {
-  object-fit: contain;
+  .logoImageWrapper {
+    height: 50px;
+  }
 }

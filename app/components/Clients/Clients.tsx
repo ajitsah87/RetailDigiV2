@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Clients.module.css";
@@ -8,30 +9,30 @@ import styles from "./Clients.module.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const clientsRow1 = [
-  { name: "Daily Objects", color: "#1a1a2e" },
-  { name: "MARS", color: "#0047AB" },
-  { name: "ēthos", color: "#1a1a2e" },
-  { name: "That Sassy Thing", color: "#8B5CF6" },
+  { name: "Daily Objects", logo: "/daily_objects.webp" },
+  { name: "MARS", logo: "/mars.webp" },
+  { name: "ēthos", logo: "/ethos.svg" },
+  { name: "That Sassy Thing", logo: "/that_sassy_thing.webp" },
 ];
 
 const clientsRow2 = [
-  { name: "BARRY CALLEBAUT", color: "#8B0000" },
-  { name: "UNIBIC", color: "#DC2626" },
-  { name: "TWININGS", color: "#1a1a2e" },
-  { name: "VAN HOUTEN", color: "#8B6914" },
+  { name: "Barry Callebaut", logo: "/barry_callebaut.webp" },
+  { name: "UNIBIC", logo: "/unibic.webp" },
+  { name: "Twinings", logo: "/twinings.webp" },
+  { name: "Van Houten", logo: "/van_houten.webp" },
 ];
 
 const clientsRow3 = [
-  { name: "Pristyn Care", color: "#FF8C00" },
-  { name: "TATA 1mg", color: "#1a1a2e" },
-  { name: "vivo", color: "#2563EB" },
-  { name: "Park+", color: "#8B5CF6" },
+  { name: "Pristyn Care", logo: "/pristyn_care.png" },
+  { name: "TATA 1mg", logo: "/tata_1mg.webp" },
+  { name: "Vivo", logo: "/vivo.png" },
+  { name: "Park+", logo: "/park_your_car_app.webp" },
 ];
 
 const clientsRow4 = [
-  { name: "BORN GOOD", color: "#22C55E" },
-  { name: "mamaearth", color: "#22C55E" },
-  { name: "MODERN CREW", color: "#1a1a2e" },
+  { name: "Born Good", logo: "/borngood.avif" },
+  { name: "mamaearth", logo: "/mama_earth.png" },
+  { name: "Modern Crew", logo: "/modern_crew.jpg" },
 ];
 
 export default function Clients() {
@@ -108,12 +109,15 @@ export default function Clients() {
         <div ref={gridRef} className={styles.logoGrid}>
           {[...clientsRow1, ...clientsRow2, ...clientsRow3].map((client) => (
             <div key={client.name} className={styles.logoCard}>
-              <span
-                className={styles.clientName}
-                style={{ color: client.color }}
-              >
-                {client.name}
-              </span>
+              <div className={styles.logoImageWrapper}>
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                  className={styles.logoImg}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -122,12 +126,15 @@ export default function Clients() {
         <div ref={gridRef2} className={styles.logoGridSmall}>
           {clientsRow4.map((client) => (
             <div key={client.name} className={styles.logoCard}>
-              <span
-                className={styles.clientName}
-                style={{ color: client.color }}
-              >
-                {client.name}
-              </span>
+              <div className={styles.logoImageWrapper}>
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                  className={styles.logoImg}
+                />
+              </div>
             </div>
           ))}
         </div>

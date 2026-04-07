@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar/Navbar";
 // import Hero from "./components/Hero/Hero";
 import USP from "./components/Hero/USP";
 import About from "./components/About/About";
-import StatsBanner from "./components/StatsBanner/StatsBanner";
 import Services from "./components/Services/Services";
 import D2CBanner from "./components/D2CBanner/D2CBanner";
 
@@ -24,7 +23,6 @@ export default function Home() {
       {/* <Hero /> */}
       <USP />
       <About />
-      <StatsBanner />
       <Services />
       <D2CBanner />
 

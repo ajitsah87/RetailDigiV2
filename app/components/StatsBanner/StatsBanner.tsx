@@ -69,7 +69,7 @@ const OdometerDigit = ({
     }
 
     return (
-      <span ref={containerRef} className={styles.slotMachine} style={{ color: 'white' }}>
+      <span ref={containerRef} className={styles.slotMachine} style={{ color: '#2563eb' }}>
         <div ref={stripRef} className={styles.slotStrip}>
           {strip.map((d, i) => (
             <span key={i} className={styles.slotDigit}>
@@ -85,21 +85,7 @@ const OdometerDigit = ({
   return (
     <span
       className={styles.blueText}
-      style={{ opacity: 0, display: "inline-flex", height: "1em", alignItems: "flex-end", lineHeight: 1 }}
-      ref={(el) => {
-        if (el) {
-          gsap.to(el, {
-            opacity: 1,
-            duration: 0.8,
-            delay: delay + 0.2,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-          });
-        }
-      }}
+      style={{ display: "inline-flex", height: "1em", alignItems: "flex-end", lineHeight: 1 }}
     >
       {char}
     </span>
@@ -170,12 +156,16 @@ export default function StatsBanner() {
     <div className={styles.statsBanner} ref={containerRef}>
       <div className={styles.bgDots}></div>
       <div className={styles.container}>
+        <div className={styles.statsBannerHeader}>
+          <h3 className={styles.impactTitle}>Our Impact</h3>
+        </div>
+
         {/* Stat 1 */}
         <div className={styles.statItem}>
           <OdometerValue value="10+" baseDelay={0} />
           <div className={styles.textContainer} ref={addTextRef}>
-            <div className={styles.whiteText}>YEARS OF</div>
-            <div className={styles.whiteText}>INDUSTRY EXPERTISE</div>
+            <div className={styles.darkText}>YEARS OF</div>
+            <div className={styles.darkText}>INDUSTRY EXPERTISE</div>
           </div>
         </div>
 
@@ -183,17 +173,17 @@ export default function StatsBanner() {
         <div className={styles.statItem}>
           <OdometerValue value="100+" baseDelay={0.15} />
           <div className={styles.textContainer} ref={addTextRef}>
-            <div className={styles.whiteText}>BRANDS SCALED</div>
-            <div className={styles.whiteText}>GLOBALLY</div>
+            <div className={styles.darkText}>BRANDS SCALED</div>
+            <div className={styles.darkText}>GLOBALLY</div>
           </div>
         </div>
 
         {/* Stat 3 */}
         <div className={styles.statItem}>
-          <OdometerValue value="70Cr+" baseDelay={0.3} />
+          <OdometerValue value="70 Cr+" baseDelay={0.3} />
           <div className={styles.textContainer} ref={addTextRef}>
-            <div className={styles.whiteText}>TOTAL REVENUE</div>
-            <div className={styles.whiteText}>DRIVEN</div>
+            <div className={styles.darkText}>TOTAL REVENUE</div>
+            <div className={styles.darkText}>DRIVEN</div>
           </div>
         </div>
       </div>

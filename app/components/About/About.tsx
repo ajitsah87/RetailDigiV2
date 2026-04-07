@@ -4,21 +4,22 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./About.module.css";
+import StatsBanner from "../StatsBanner/StatsBanner";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const platforms = [
-  { name: "Meta", logo: "/meta.svg", height: 28 },
-  { name: "amazon", logo: "/amazon.png", height: 32 },
-  { name: "blinkit", logo: "/blinkit.png", height: 32 },
-  { name: "zepto", logo: "/zepto.png", height: 30 },
-  { name: "Google Ads", logo: "/Google_Ads_logo.svg", height: 40 },
-  { name: "Flipkart", logo: "/flipkart.png", height: 32 },
-  { name: "Myntra", logo: "/myntra.png", height: 32 },
-  { name: "firstcry", logo: "/firstcry.png", height: 34 },
-  { name: "bigbasket", logo: "/bigbasket.png", height: 34 },
-  { name: "Swiggy Instamart", logo: "/swiggy.png", height: 36 },
-  { name: "NYKAA", logo: "/nykaa.png", height: 26 },
+  { name: "Meta", logo: "/meta.svg", height: 20 },
+  { name: "amazon", logo: "/amazon.png", height: 22 },
+  { name: "blinkit", logo: "/blinkit.png", height: 24 },
+  { name: "zepto", logo: "/zepto.png", height: 22 },
+  { name: "Google Ads", logo: "/Google_Ads_logo.svg", height: 28 },
+  { name: "Flipkart", logo: "/flipkart.png", height: 22 },
+  { name: "Myntra", logo: "/myntra.png", height: 22 },
+  { name: "firstcry", logo: "/firstcry.png", height: 24 },
+  { name: "bigbasket", logo: "/bigbasket.png", height: 24 },
+  { name: "Swiggy Instamart", logo: "/swiggy.png", height: 24 },
+  { name: "NYKAA", logo: "/nykaa.png", height: 18 },
 ];
 
 const capabilities = [
@@ -47,7 +48,7 @@ const capabilities = [
     ),
   },
   {
-    label: "Marketplace SEO",
+    label: "Marketplace Growth",
     icon: (
       <svg viewBox="0 0 24 24" className={styles.capIcon}>
         <path d="M7 2v11h3v9l7-12h-4l4-8z" />
@@ -158,6 +159,19 @@ export default function About() {
               </div>
             </div>
 
+          </div>
+          
+          {/* Third Column - Stats Banner + Image Wrapper */}
+          <div className={`${styles.card} ${styles.statsCardWrapper}`}>
+            {/* The Ad Image */}
+            {/* <div className={styles.adImageWrapper}>
+              <img src="/Ad.webp" alt="Advertising" className={styles.adImage} />
+            </div> */}
+
+            {/* The Blue Curved Background containing the StatsBanner */}
+            <div className={styles.statsBlueContainer}>
+              <StatsBanner />
+            </div>
           </div>
         </div>
       </div>

@@ -137,7 +137,7 @@ export default function USP() {
               {/* Email */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Email id</label>
-                <span className={styles.formSubLabel}>Official Email ID<span className={styles.redStar}>*</span></span>
+               
                 <input
                   type="email"
                   name="email"
@@ -152,7 +152,7 @@ export default function USP() {
               {/* Name */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Name</label>
-                <span className={styles.formSubLabel}>First name<span className={styles.redStar}>*</span></span>
+               
                 <input
                   type="text"
                   name="firstName"
@@ -167,7 +167,7 @@ export default function USP() {
               {/* Brand Name */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Brand Name</label>
-                <span className={styles.formSubLabel}>Last name<span className={styles.redStar}>*</span></span>
+               
                 <input
                   type="text"
                   name="lastName"
@@ -182,21 +182,9 @@ export default function USP() {
               {/* Mobile No */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Mobile No</label>
-                <span className={styles.formSubLabel}>Phone number<span className={styles.redStar}>*</span></span>
+
                 <div className={styles.phoneRow}>
-                  <select
-                    name="phoneCode"
-                    value={formData.phoneCode}
-                    onChange={handleChange}
-                    className={styles.phoneCodeSelect}
-                  >
-                    <option value="+91">India (भारत)</option>
-                    <option value="+1">US (+1)</option>
-                    <option value="+44">UK (+44)</option>
-                    <option value="+971">UAE (+971)</option>
-                    <option value="+65">Singapore (+65)</option>
-                    <option value="+61">Australia (+61)</option>
-                  </select>
+                 
                   <input
                     type="tel"
                     name="phoneNumber"
@@ -204,7 +192,7 @@ export default function USP() {
                     onChange={handleChange}
                     className={styles.phoneInput}
                     required
-                    placeholder="+91"
+                    // placeholder="+01"
                   />
                 </div>
               </div>
@@ -212,7 +200,7 @@ export default function USP() {
               {/* Company Name */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>What do you sell</label>
-                <span className={styles.formSubLabel}>Company name<span className={styles.redStar}>*</span></span>
+                
                 <input
                   type="text"
                   name="companyName"
@@ -227,7 +215,7 @@ export default function USP() {
               {/* Service Required */}
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Service required</label>
-                <span className={styles.formSubLabel}>Service Required<span className={styles.redStar}>*</span></span>
+               
                 <select
                   name="serviceRequired"
                   value={formData.serviceRequired}
