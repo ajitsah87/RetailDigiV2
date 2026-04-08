@@ -49,7 +49,7 @@ const cardsData = [
         icon: <GreenCheck />,
       },
     ],
-    imageSrc: "/Content-creation.webp", // Replace with actual path later
+    imageSrc: "/content-creation.webp", // Replace with actual path later
     imageBg: "#E8EAF6",
   },
   {
@@ -79,7 +79,7 @@ const cardsData = [
         icon: <GreenCheck />,
       },
     ],
-    imageSrc: "/Content-distribution.webp", // Replace with actual path
+    imageSrc: "/content-distribution.webp", // Replace with actual path
     imageBg: "#E3F2FD",
   },
   {
@@ -109,7 +109,7 @@ const cardsData = [
         icon: <GreenCheck />,
       },
     ],
-    imageSrc: "/Analytics-reporting.webp", // Replace with actual path
+    imageSrc: "/analytics-reporting.webp", // Replace with actual path
     imageBg: "#E8F5E9",
   },
 ];
