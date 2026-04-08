@@ -11,7 +11,7 @@ import MarketplaceCards from "./components/MarketplaceCards/MarketplaceCards";
 import ContentEcosystemBanner from "./components/ContentEcosystemBanner/ContentEcosystemBanner";
 import ContentEcosystemCards from "./components/ContentEcosystemCards/ContentEcosystemCards";
 import Clients from "./components/Clients/Clients";
-// import Contact from "./components/Contact/Contact";
+import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 
@@ -45,7 +45,7 @@ export default function Home() {
       <Clients />
 
       {/* Contact CTA */}
-      {/* <Contact /> */}
+      <Contact />
 
       {/* Footer */}
       <Footer />

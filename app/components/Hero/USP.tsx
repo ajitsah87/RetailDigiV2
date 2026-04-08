@@ -1,26 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 import styles from "./USP.module.css";
 
 export default function USP() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
-
-  const [formData, setFormData] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    phoneCode: "+91",
-    phoneNumber: "",
-    companyName: "",
-    serviceRequired: "",
-  });
-
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [statusMsg, setStatusMsg] = useState("");
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,7 +25,7 @@ export default function USP() {
       );
 
       gsap.fromTo(
-        formRef.current,
+        imageRef.current,
         { x: 80, opacity: 0 },
         {
           x: 0,
@@ -51,48 +39,6 @@ export default function USP() {
 
     return () => ctx.revert();
   }, []);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    setStatusMsg("");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus("success");
-        setStatusMsg(data.message || "Message sent successfully!");
-        setFormData({
-          email: "",
-          firstName: "",
-          lastName: "",
-          phoneCode: "+91",
-          phoneNumber: "",
-          companyName: "",
-          serviceRequired: "",
-        });
-      } else {
-        setStatus("error");
-        setStatusMsg(data.error || "Something went wrong.");
-      }
-    } catch {
-      setStatus("error");
-      setStatusMsg("Network error. Please try again.");
-    }
-  };
 
   return (
     <section ref={sectionRef} className={styles.usp} id="home">
@@ -128,138 +74,32 @@ export default function USP() {
           </a>
         </div>
 
-        {/* Right - Reach Out Form */}
-        <div ref={formRef} className={styles.formWrapper}>
-          <div className={styles.formCard}>
-            <h2 className={styles.formTitle}>Reach Out To Us!</h2>
-
-            <form onSubmit={handleSubmit} className={styles.form}>
-              {/* Email */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Email id</label>
-               
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={styles.formInput}
-                  required
-                  placeholder=""
-                />
-              </div>
-
-              {/* Name */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Name</label>
-               
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className={styles.formInput}
-                  required
-                  placeholder=""
-                />
-              </div>
-
-              {/* Brand Name */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Brand Name</label>
-               
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className={styles.formInput}
-                  required
-                  placeholder=""
-                />
-              </div>
-
-              {/* Mobile No */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Mobile No</label>
-
-                <div className={styles.phoneRow}>
-                 
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className={styles.phoneInput}
-                    required
-                    // placeholder="+01"
-                  />
-                </div>
-              </div>
-
-              {/* Company Name */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>What do you sell</label>
-                
-                <input
-                  type="text"
-                  name="companyName"
-                  value={formData.companyName}
-                  onChange={handleChange}
-                  className={styles.formInput}
-                  required
-                  placeholder=""
-                />
-              </div>
-
-              {/* Service Required */}
-              <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Service required</label>
-               
-                <select
-                  name="serviceRequired"
-                  value={formData.serviceRequired}
-                  onChange={handleChange}
-                  className={styles.formSelect}
-                  required
-                >
-                  <option value="" disabled>
-                    Please Select
-                  </option>
-                  <option value="Performance Marketing">Performance Marketing</option>
-                  <option value="Social Media Management">Social Media Management</option>
-                  <option value="Website Building">Website Building</option>
-                  <option value="Amazon & Flipkart">Amazon &amp; Flipkart</option>
-                  <option value="Quick Commerce">Quick Commerce</option>
-                  <option value="Brand Strategy">Brand Strategy</option>
-                  <option value="Full Service">Full Service</option>
-                </select>
-              </div>
-
-              {/* Submit */}
-              <button
-                type="submit"
-                className={styles.submitBtn}
-                disabled={status === "sending"}
-              >
-                {status === "sending" ? (
-                  <span className={styles.spinner}></span>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-
-              {/* Status Message */}
-              {statusMsg && (
-                <div
-                  className={`${styles.statusMsg} ${
-                    status === "success" ? styles.success : styles.errorMsg
-                  }`}
-                >
-                  {statusMsg}
-                </div>
-              )}
-            </form>
+        {/* Right Content */}
+        <div ref={imageRef} className={styles.uspImageContainer}>
+          <div className={styles.blueCircle}></div>
+          <Image 
+            src="/girl_holding_parcel.webp" 
+            alt="Girl holding parcel" 
+            width={600} 
+            height={600} 
+            className={styles.mainImage}
+            priority
+          />
+          
+          <div className={`${styles.floatingLogo} ${styles.logoShopify}`}>
+            <Image src="/shopify.webp" alt="Shopify" width={32} height={32} />
+          </div>
+          <div className={`${styles.floatingLogo} ${styles.logoSwiggy}`}>
+            <Image src="/swiggy.webp" alt="Swiggy" width={32} height={32} />
+          </div>
+          <div className={`${styles.floatingLogo} ${styles.logoUnknown}`}>
+            <Image src="/unkown.png" alt="Unknown" width={32} height={32} />
+          </div>
+          <div className={`${styles.floatingLogo} ${styles.logoMeta}`}>
+            <Image src="/meta.png" alt="Meta" width={32} height={32} />
+          </div>
+          <div className={`${styles.floatingLogo} ${styles.logoAmazon}`}>
+            <Image src="/amazon.webp" alt="Amazon" width={32} height={32} />
           </div>
         </div>
       </div>

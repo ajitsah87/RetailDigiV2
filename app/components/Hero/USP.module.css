@@ -1,6 +1,6 @@
 /* ===== USP / HERO SECTION ===== */
 .usp {
-  padding: 160px 0 100px 0;
+  padding: 100px 0 0 0;
   position: relative;
   overflow: hidden;
   background-image: 
@@ -16,10 +16,10 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -27,6 +27,9 @@
 .uspContent {
   position: relative;
   z-index: 2;
+  flex: 1;
+  max-width: 50%;
+  padding-right: 40px;
 }
 
 .brandHeader {
@@ -135,214 +138,89 @@
   transform: translateX(4px);
 }
 
-/* ===== RIGHT SIDE - CONTACT FORM ===== */
-.formWrapper {
+/* ===== RIGHT CONTENT ===== */
+.uspImageContainer {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
+}
+
+.mainImage {
   position: relative;
   z-index: 2;
-}
-
-.formCard {
-  background: #ffffff;
-  border: 1px solid #4C1D95;
-  border-radius: 20px;
-  padding: 24px 28px;
   width: 100%;
-  max-width: 420px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.04);
+  max-width: 500px;
+  height: auto;
+  display: block;
 }
 
-.formTitle {
-  font-family: "Montserrat", sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  color: #312E81;
-  text-align: center;
-  margin-bottom: 16px;
-  letter-spacing: -0.3px;
+.blueCircle {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  z-index: 1;
 }
 
-.form {
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.floatingLogo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #0c0c0c;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.formLabel {
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 0;
-}
-
-.formSubLabel {
-  font-size: 12px;
-  color: #64748b;
-  margin-bottom: 4px;
-}
-
-.formInput {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 15px;
-  color: var(--dark-text);
-  background: #fafbfc;
-  outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  font-family: "Inter", sans-serif;
-}
-
-.formInput:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-/* Phone Row */
-.phoneRow {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.phoneCodeSelect {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  color: var(--dark-text);
-  background: #fafbfc;
-  outline: none;
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  transition: border-color 0.25s ease;
-  appearance: auto;
-}
-
-.phoneCodeSelect:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.phoneInput {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 15px;
-  color: var(--dark-text);
-  background: #fafbfc;
-  outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  font-family: "Inter", sans-serif;
-}
-
-.phoneInput:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-/* Select dropdown */
-.formSelect {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 15px;
-  color: var(--dark-text);
-  background: #fafbfc;
-  outline: none;
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  transition: border-color 0.25s ease;
-  appearance: auto;
-}
-
-.formSelect:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-/* Submit Button */
-.submitBtn {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 24px;
-  background: var(--accent-orange);
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Montserrat", sans-serif;
-  margin-top: 4px;
-  align-self: flex-start;
-  min-width: 110px;
-  min-height: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
 }
 
-.submitBtn:hover {
-  background: #e67e00;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.35);
+.floatingLogo img {
+  object-fit: contain;
 }
 
-.submitBtn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: none;
+.logoShopify {
+  top: 2%;
+  left: 26%;
+  animation-delay: 0s;
 }
 
-/* Spinner */
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 2.5px solid rgba(255, 255, 255, 0.3);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
+.logoSwiggy {
+  top: 14%;
+  right: 18%;
+  animation-delay: 1.2s;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.logoUnknown {
+  top: 38%;
+  left: 16%;
+  animation-delay: 2.4s;
 }
 
-/* Status Messages */
-.statusMsg {
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
+.logoMeta {
+  bottom: 24%;
+  left: 34%;
+  animation-delay: 3.6s;
 }
 
-.success {
-  background: #ecfdf5;
-  color: #059669;
-  border: 1px solid #a7f3d0;
+.logoAmazon {
+  bottom:38%;
+  right: 22%;
+  animation-delay: 4.8s;
 }
 
-.errorMsg {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
@@ -352,17 +230,15 @@
   }
 
   .uspContainer {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 60px;
   }
 
-  .uspContent {
-    order: 0;
-  }
-
-  .formWrapper {
-    order: 1;
+  .uspContent, .uspImageContainer {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0;
   }
 
   .brandHeader,
@@ -382,28 +258,11 @@
   .connectBtn {
     margin-bottom: 10px;
   }
-
-  .formCard {
-    max-width: 460px;
-    margin: 0 auto;
-  }
 }
 
 @media (max-width: 768px) {
   .usp {
     padding: 120px 0 60px 0;
-  }
-
-  .uspContainer {
-    gap: 32px;
-  }
-
-  .formCard {
-    padding: 28px 20px 24px;
-  }
-
-  .formTitle {
-    font-size: 20px;
   }
 
   .uspTitle {
@@ -416,11 +275,6 @@
     padding: 100px 0 40px 0;
   }
 
-  .formCard {
-    padding: 24px 16px 20px;
-    border-radius: 12px;
-  }
-
   .brandName {
     font-size: 20px;
   }
@@ -431,3 +285,4 @@
     font-size: 15px;
   }
 }
+
