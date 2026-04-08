@@ -234,6 +234,10 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .leftColumn {
+    display: none;
+  }
   
   .leftCard {
     height: 400px;

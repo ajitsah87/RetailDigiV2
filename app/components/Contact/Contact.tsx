@@ -98,7 +98,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus("success");
-        setStatusMsg(data.message || "Message sent successfully!");
+        setStatusMsg("Request Received. We will get back to you shortly!");
         setFormData({
           email: "",
           firstName: "",

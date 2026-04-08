@@ -35,15 +35,7 @@ export default function Footer() {
             <p className={styles.tagline}>
               We combine strategy, creativity, and technology to help brands grow in the modern digital landscape.
             </p>
-            <form className={styles.emailForm} onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Enter your email..." className={styles.emailInput} required />
-              <button type="submit" className={styles.submitBtn}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 17L17 7"/>
-                  <path d="M7 7h10v10"/>
-                </svg>
-              </button>
-            </form>
+         
           </div>
 
           <div className={styles.rightCols}>
